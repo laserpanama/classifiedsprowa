@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 import DashboardLayout from "./components/dashboard/DashboardLayout";
 import AccountsPage from "./pages/AccountsPage";
@@ -53,17 +54,20 @@ const PatchedDashboardLayout = ({ children }) => {
 };
 
 const App = () => (
-  <BrowserRouter>
-    <PatchedDashboardLayout>
-      <Routes>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/accounts" element={<AccountsPage />} />
-        <Route path="/ads" element={<AdsPage />} />
-        <Route path="/schedules" element={<SchedulesPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </PatchedDashboardLayout>
-  </BrowserRouter>
+  <>
+    <BrowserRouter>
+      <PatchedDashboardLayout>
+        <Routes>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/accounts" element={<AccountsPage />} />
+          <Route path="/ads" element={<AdsPage />} />
+          <Route path="/schedules" element={<SchedulesPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </PatchedDashboardLayout>
+    </BrowserRouter>
+    <Analytics />
+  </>
 );
 
 export default App;
