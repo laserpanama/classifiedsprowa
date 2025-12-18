@@ -1,0 +1,8 @@
+INFO:     Started server process [19709]
+INFO:     Waiting for application startup.
+2025-08-23 06:11:22,675 - app.backend.main - INFO - Connected to MongoDB.
+2025-08-23 06:11:22,679 - apscheduler.scheduler - INFO - Scheduler started
+2025-08-23 06:11:22,679 - app.backend.services.scheduler_service - INFO - Scheduler started and connected to MongoDB job store.
+2025-08-23 06:11:22,680 - apscheduler.scheduler - WARNING - Error getting due jobs from job store 'default': 'AsyncIOMotorCursor' object is not iterable
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
